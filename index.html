@@ -93,6 +93,14 @@
             font-weight: 400;
         }
 
+        .mobile-nav-dropdown {
+            display: none;
+        }
+
+        .head .navbar-nav>li>.mobile-nav-dropdown li {
+            width 100% !important;
+        }
+
     </style>
 </head>
 
@@ -111,16 +119,22 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">About</a>
+                        <li><a href="#" class="drop-btn">About</a>
                             <ul class="nav-dropdown">
-                                <li><a href="#">Software</a></li>
-                                <li><a href="#">Hardware</a></li>
-                                <li><a href="#">Non-Technical</a></li>
-                                <li><a href="#">Technical</a></li>
+                                <li><a href="#" class="dpit">Software</a></li>
+                                <li><a href="#" class="dpit">Hardware</a></li>
+                                <li><a href="#" class="dpit">Non-Technical</a></li>
+                                <li><a href="#" class="dpit">Technical</a></li>
+                            </ul>
+                            <ul class="mobile-nav-dropdown">
+                                <li><a href="#" class="mdpit">Software</a></li>
+                                <li><a href="#" class="mdpit">Hardware</a></li>
+                                <li><a href="#" class="mdpit">Non-Technical</a></li>
+                                <li><a href="#" class="mdpit">Technical</a></li>
                             </ul>
                         </li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="#" id="drop">Sevices</a>
+                        <li><a href="#" class="drop-btn">Sevices</a>
                             <ul class="nav-dropdown">
                                 <li><a href="#">Software</a></li>
                                 <li><a href="#">Hardware</a></li>
@@ -193,8 +207,8 @@
             </div>
         </div>
     </div>
-    <!-- <div class="content-section"></div>
     <div class="content-section"></div>
+    <!--  <div class="content-section"></div>
     <div class="content-section"></div>-->
 
 
@@ -202,7 +216,45 @@
         $(document).ready(function() {
             $(".navbar-toggle").click(function() {
                 $(this).toggleClass("open");
+                $(".nav-dropdown").hide();
+                if ($(".navbar-toggle").hasClass("open")) {
+                    $(".drop-btn").click(function() {
+                        if ($(".drop-btn").hasClass("dp-active")) {
+                            $(".mobile-nav-dropdown").hide();
+                            $(".mdpit").hide();
+                            $(".drop-btn").removeClass("dp-active")
+                            console.log("removeworking");
+                        } else {
+                            $(".drop-btn").addClass("dp-active")
+                            $('.nav-dropdown').hide();
+                            $('.dpit').hide();
+                            $(".mobile-nav-dropdown").show();
+                            $(".mdpit").show();
+                            console.log("addworking");
+                        }
+                    })
+
+                }
             })
+            if ($(".navbar-toggle").hasClass("in")) {
+                $(".drop-btn").click(function() {
+                    if ($(".drop-btn").hasClass("dp-active")) {
+                        $(".mobile-nav-dropdown").hide();
+                        $(".mdpit").hide();
+                        $(".drop-btn").removeClass("dp-active")
+                        console.log("removeworking");
+                    } else {
+                        $(".drop-btn").addClass("dp-active")
+                        $('.nav-dropdown').hide();
+                        $('.dpit').hide();
+                        $(".mobile-nav-dropdown").show();
+                        $(".mdpit").show();
+                        console.log("addworking");
+                    }
+                })
+
+            }
+
         })
 
     </script>

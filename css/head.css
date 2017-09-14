@@ -64,7 +64,7 @@
         
         .head .navbar-nav>li {
             width: 24.8%;
-            height: 60px;
+            min-height: 60px;
             background: #fff;
             color: #ff5733;
             font-size: 18px;
