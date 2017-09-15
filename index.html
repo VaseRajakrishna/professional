@@ -93,12 +93,17 @@
             font-weight: 400;
         }
 
-        .mobile-nav-dropdown {
-            display: none;
-        }
-
         .head .navbar-nav>li>.mobile-nav-dropdown li {
             width 100% !important;
+        }
+
+        .cnt-r5 {
+            padding: 3% 0% 2% 0%;
+            background: #fff;
+        }
+
+        .carousel {
+            padding: 3% 2%;
         }
 
     </style>
@@ -207,53 +212,65 @@
             </div>
         </div>
     </div>
-    <div class="content-section"></div>
+    <div class="content-section cnt-r5">
+        <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                    </div>
+
+                    <div class="item">
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                    </div>
+
+                    <div class="item">
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
     <!--  <div class="content-section"></div>
     <div class="content-section"></div>-->
 
 
     <script>
         $(document).ready(function() {
+            dropDown();
+            $(".mobile-nav-dropdown").hide();
+
             $(".navbar-toggle").click(function() {
                 $(this).toggleClass("open");
                 $(".nav-dropdown").hide();
-                if ($(".navbar-toggle").hasClass("open")) {
-                    $(".drop-btn").click(function() {
-                        if ($(".drop-btn").hasClass("dp-active")) {
-                            $(".mobile-nav-dropdown").hide();
-                            $(".mdpit").hide();
-                            $(".drop-btn").removeClass("dp-active")
-                            console.log("removeworking");
-                        } else {
-                            $(".drop-btn").addClass("dp-active")
-                            $('.nav-dropdown').hide();
-                            $('.dpit').hide();
-                            $(".mobile-nav-dropdown").show();
-                            $(".mdpit").show();
-                            console.log("addworking");
-                        }
-                    })
+                $(".mobile-nav-dropdown").hide();
+            });
 
-                }
-            })
-            if ($(".navbar-toggle").hasClass("in")) {
+            function dropDown() {
                 $(".drop-btn").click(function() {
                     if ($(".drop-btn").hasClass("dp-active")) {
+                        $(".drop-btn").removeClass("dp-active");
+                        $(".nav-dropdown").hide();
                         $(".mobile-nav-dropdown").hide();
-                        $(".mdpit").hide();
-                        $(".drop-btn").removeClass("dp-active")
-                        console.log("removeworking");
                     } else {
-                        $(".drop-btn").addClass("dp-active")
-                        $('.nav-dropdown').hide();
-                        $('.dpit').hide();
+                        $(".drop-btn").addClass("dp-active");
                         $(".mobile-nav-dropdown").show();
-                        $(".mdpit").show();
-                        console.log("addworking");
+                        $(".nav-dropdown").hide();
+                        console.log("working else")
                     }
                 })
-
             }
+
 
         })
 
