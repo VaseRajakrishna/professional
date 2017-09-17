@@ -94,7 +94,8 @@
         }
 
         .head .navbar-nav>li>.mobile-nav-dropdown li {
-            width 100% !important;
+            background: #ccc;
+            width: 50% !important;
         }
 
         .cnt-r5 {
@@ -124,7 +125,8 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#" class="drop-btn">About</a>
+                        <li><a href="#" class="drop-btn">About<span class="fa fa-chevron-down pull-right drop-icon"></span></a>
+
                             <ul class="nav-dropdown">
                                 <li><a href="#" class="dpit">Software</a></li>
                                 <li><a href="#" class="dpit">Hardware</a></li>
@@ -249,11 +251,11 @@
         $(document).ready(function() {
             dropDown();
             $(".mobile-nav-dropdown").hide();
-
             $(".navbar-toggle").click(function() {
                 $(this).toggleClass("open");
                 $(".nav-dropdown").hide();
-                 $(".drop-btn").removeClass("dp-active");
+                $(".drop-btn").removeClass("dp-active");
+                $(".drop-icon").removeClass("icon-active");
                 $(".mobile-nav-dropdown").hide();
             });
 
@@ -261,10 +263,13 @@
                 $(".drop-btn").click(function() {
                     if ($(".drop-btn").hasClass("dp-active")) {
                         $(".drop-btn").removeClass("dp-active");
+                        $(".drop-icon").removeClass("icon-active");
+                        $(".drop-icon").css("transform","rotate("+0+"deg)")
                         $(".nav-dropdown").hide();
                         $(".mobile-nav-dropdown").hide();
                     } else {
                         $(".drop-btn").addClass("dp-active");
+                        $(".drop-icon").addClass("icon-active");
                         $(".mobile-nav-dropdown").show();
                         $(".nav-dropdown").hide();
                         console.log("working else")
