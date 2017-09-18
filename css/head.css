@@ -39,18 +39,19 @@
   }
 
   .navbar-toggle {
-      width: 50px;
+      width: 40px;
       height: 35px;
       padding-top: 3px;
       position: relative;
       padding-bottom: 3px;
       transition: .25s ease-in-out;
+      top: 10px;
   }
 
   .head {
       width: 100%;
       height: 60px;
-      background: #ff5733;
+      background: #002e4b;
   }
 
   .navbar {
@@ -65,8 +66,9 @@
   .head .navbar-nav>li {
       width: 24.8%;
       /*height: 60px;*/
-      background: #fff;
-      color: #ff5733;
+      background: #009bcc;
+      ;
+      color: #fff;
       font-size: 18px;
       margin-right: 2px;
   }
@@ -79,11 +81,11 @@
       display: block;
       text-align: center;
       line-height: 60px;
-      color: #ff5733;
+      color: #fff;
   }
 
   .navbar-nav li>a:hover {
-      background-color: #ff5733;
+      background-color: #02212a;
       color: #fff;
   }
 
@@ -117,7 +119,7 @@
       padding-left: 0px;
       color: #fff;
       display: none;
-      background: #ff5733;
+      background: #02212a;
   }
 
   .nav-dropdown>li>a {
@@ -131,7 +133,7 @@
   .nav-dropdown>li>a:hover {
       text-decoration: none;
       background: #fff;
-      color: #ff5733;
+      color: #02212a;
   }
 
   .drop-icon {
@@ -150,7 +152,6 @@
   }
 
   @media screen and (max-width:767px) {
-
       .container-fluid>.navbar-header,
       .container-fluid>.navbar-collapse,
       .navbar-collapse,
@@ -173,7 +174,7 @@
           float: none
       }
       .head .navbar-nav>li {
-          min-height: 60px;
+          min-height: 40px;
       }
       .head .navbar-nav>li {
           width: 100%;
@@ -182,8 +183,33 @@
           width: 50% !important;
       }
   }
-@media screen and (max-width:400px){
-    .head {
+
+  @media screen and (max-width:400px) {
+      body{
+          font-size: 14px;
+      }
+      h1{
+          font-size: 22px;
+      }
+      h2{
+          font-size: 20px;
+      }
+      h3{
+          font-size: 18px;
+      }
+     body p{
+          font-size: 14px;
+      }
+      .head {
           height: auto;
       }
-}
+       .navbar-nav li>a,
+      .drop-icon{
+          line-height: 40px;
+          font-size: 14px;
+      }
+      .crt-btn{
+          font-size: 14px;
+      }
+
+  }
